@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -46,6 +47,23 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.kotlinx.serialization.json)
+
+    // --- ROOM DEPENDENCIES ---
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+
+    // --- RETROFIT & OKHTTP DEPENDENCIES ---
+    // Retrofit Core
+    implementation(libs.squareup.retrofit)
+
+    // Converter (Gson)
+    implementation(libs.squareup.retrofit.converter.gson)
+    implementation(libs.squareup.retrofit.converter.kotlinx.serialization)
+
+    // Logging Interceptor (Highly recommended for development)
+    implementation(libs.squareup.okhttp.logging.interceptor)
 
     // Unit Testing
     testImplementation(libs.junit)

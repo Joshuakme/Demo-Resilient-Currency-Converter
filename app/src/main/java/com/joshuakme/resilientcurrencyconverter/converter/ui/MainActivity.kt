@@ -1,4 +1,4 @@
-package com.joshuakme.resilientcurrencyconverter
+package com.joshuakme.resilientcurrencyconverter.converter.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
